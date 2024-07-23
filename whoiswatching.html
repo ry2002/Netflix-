@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who's Watching</title>
+    <link rel="stylesheet" href="whoisusing.css">
+</head>
+<body>
+    <div class="background-image">
+        <div class="container">
+            <h1>Who's Watching?</h1>
+            <div class="profiles" id="profiles">
+                <div class="profile" onclick="selectProfile('User 1')">
+                    <img src="./images/png1.png" alt="User 1">
+                    <p>User 1</p>
+                    <button class="edit-btn" onclick="event.stopPropagation(); showEditProfileModal(this.parentElement, this.parentElement.querySelector('p'), this.parentElement.querySelector('img'))">✎</button>
+                </div>
+                <div class="profile" onclick="selectProfile('User 2')">
+                    <img src="./images/png2.png" alt="User 2">
+                    <p>User 2</p>
+                    <button class="edit-btn" onclick="event.stopPropagation(); showEditProfileModal(this.parentElement, this.parentElement.querySelector('p'), this.parentElement.querySelector('img'))">✎</button>
+                </div>
+                <div class="profile" onclick="selectProfile('User 3')">
+                    <img src="images/png3.png" alt="User 3">
+                    <p>User 3</p>
+                    <button class="edit-btn" onclick="event.stopPropagation(); showEditProfileModal(this.parentElement, this.parentElement.querySelector('p'), this.parentElement.querySelector('img'))">✎</button>
+                </div>
+                <div class="profile" onclick="selectProfile('User 4')">
+                    <img src="./images/png4.png" alt="User 4">
+                    <p>User 4</p>
+                    <button class="edit-btn" onclick="event.stopPropagation(); showEditProfileModal(this.parentElement, this.parentElement.querySelector('p'), this.parentElement.querySelector('img'))">✎</button>
+                </div>
+            </div>
+            <button class="btn" onclick="addProfile()">Add Profile</button>
+        </div>
+    </div>
+
+    <!-- Modal for adding profile -->
+    <div id="addProfileModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Add Profile</h2>
+            <input type="text" id="profileName" placeholder="Enter profile name">
+            <input type="file" id="profileImage" accept="image/*">
+            <button class="btn" onclick="saveProfile()">Save</button>
+        </div>
+    </div>
+
+    <!-- Modal for editing profile name and picture -->
+    <div id="editProfileModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditProfileModal()">&times;</span>
+            <h2>Edit Profile</h2>
+            <input type="text" id="editProfileName" placeholder="Enter new profile name">
+            <input type="file" id="editProfileImage" accept="image/*">
+            <button class="btn" id="saveEditProfile">Save</button>
+        </div>
+    </div>
+    <script src="whoisusing.js"></script>
+</body>
+</html>

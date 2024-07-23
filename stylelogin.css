@@ -1,0 +1,166 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto',sans-serif;
+}
+
+body{
+    background: #000;
+}
+body::before{
+    content:"";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background: url(images/netflix52.jpg);
+    background-position: center;
+    
+}
+nav{
+    position: fixed;
+    z-index: 1;
+    padding: 25px 60px;
+    top: -60px;
+    left: -20px;
+    /* height: 50%; */
+
+}
+nav a img{
+    width:165px;
+    
+
+}
+/** log in **/
+
+
+.formwrapper{
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    width: 430px;
+    padding: 60px;
+    border-radius: 4px;
+    background: #000000BF;
+    transform: translate(-50%, -50%);
+}
+
+.formwrapper h2{
+    color: #fff;
+    font-size:2rem ;
+    
+}
+.formwrapper form{
+    margin: 25px 0 65px;
+}
+form .form-control{
+    position: relative;
+    height: 50px;
+    margin-bottom: 16px;
+}
+.form-control input{
+    height: 100%;
+    width: 100%;
+    background: #333;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 4px;
+    padding: 0 20px;
+}
+.form-control input:is(:focus, :valid){
+    padding: 16px 20px 0;
+    background: #444;
+}
+.form-control label{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    color: #8c8c8c;
+    pointer-events: none;
+    font-size: 1rem;
+    transform: translateY(-50%);
+    transition: all 0.1s ease;
+}
+.form-control input:is(:focus, :valid) ~ label{
+    font-size: 0.75rem;
+    transform: translateY(-130%);
+}
+
+form button{
+    width: 100%;
+    padding: 16px 0;
+    font-size: 1rem;
+    border-radius: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 4px;
+    background: #e50914;
+    margin: 25px 0 10px;
+    transition: 0.1 ease;
+}
+form button:hover{
+    background-attachment: #c40812;
+}
+form .form-help{
+    display: flex;
+    justify-content: space-between;
+}
+form .remember-me{
+    display: flex;
+}
+form .remember-me input{
+    margin-right: 5px;
+    accent-color: #b3b3b3;
+}
+form .form-help :where(label, a){
+    font-size: 0.9rem;
+
+}
+.formwrapper :where(label, p, small, a) {
+    color: #b3b3b3;
+}
+
+.formwrapper p a{
+    color: #ffff;
+
+}
+.formwrapper small{
+    display: block;
+    margin-top: 15px;
+}
+.formwrapper small a{
+    color: #0071eb;
+}
+.formwrapper a{
+    text-decoration: none;
+}
+.formwrapper a:hover{
+    text-decoration: underline;
+}
+
+
+@media(max-width:740px ){
+    body::before{
+        display: none;
+    }
+    nav, .formwrapper{
+        padding:20px ;
+    }nav a img{
+        width:140px;
+    }
+    .formwrapper{
+        top:43%;
+        width: 100%;
+    }
+    .formwrapper form{
+        margin:25px 0 40px
+    }
+}

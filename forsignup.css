@@ -1,0 +1,113 @@
+:root {
+    --primary-color: #e50914;
+    --dark-color: #141414;
+    --light-color: #f4f4f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--light-color);
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.background-image {
+    background: url('./images/netflix52.jpg') no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.background-image::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 120px 100px 250px #000000 , inset -120px -100px 250px #000000;
+}
+
+.sign-up-container {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 2rem;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+    z-index: 1;
+}
+
+.sign-up-header img {
+    width: 150px;
+    margin-bottom: 1.5rem;
+}
+
+.sign-up-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.sign-up-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.sign-up-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.sign-up-form input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.sign-up-form .btn-sign-up {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.sign-up-form .btn-sign-up:hover {
+    background-color: #d81b60;
+}
+
+@media (max-width: 768px) {
+    .sign-up-content h1 {
+        font-size: 2rem;
+    }
+
+    .sign-up-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .sign-up-content h3 {
+        font-size: 1rem;
+    }
+}
